@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { LayoutComponent } from 'src/component/layout/layout.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'dramul-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, LayoutComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dragon-multiply-quest';
+  title = 'Dragon Multiple Quest';
 }
