@@ -1,0 +1,29 @@
+.loading {
+  position: fixed;
+  background-color: var(--black);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  opacity: 0;
+  color: var(--white);
+  pointer-events: none;
+
+  &--visible {
+    opacity: 1;
+    transition: opacity 500ms;
+    pointer-events: auto;
+  }
+
+  &__operation {
+    font-size: 30rem;
+  }
+
+  &__text {
+    font-size: 10rem;
+  }
+}

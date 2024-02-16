@@ -1,8 +1,20 @@
 :host {
-  position:relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width:  100vw;
   height: 100vh;
   background: radial-gradient( var(--darkGrey) 0%, var(--veryDarkGrey) 50%, var(--black) 100%);
-  color: white;
+
+}
+
+.layout {
+  max-width: 90%;
+  max-height: 90%;
+  background: var(--lightBeige);
+  border: 5px solid  var(--grey);
+  color: var(--veryDarkGrey);
+  width: 700px;
+  height: 700px;
+  padding: 50px;
 }

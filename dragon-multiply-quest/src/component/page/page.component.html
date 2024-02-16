@@ -1,0 +1,12 @@
+
+<div [ngClass]="{'loading': true, 'loading--visible': loading}">
+  <div [class]="'loading__operation'">
+    3 x 3 = 9
+  </div>
+  <div [class]="'loading__text'">
+    ...loading...
+  </div>
+</div>
+<div [class]="'page'">
+  <ng-content></ng-content>
+</div>
