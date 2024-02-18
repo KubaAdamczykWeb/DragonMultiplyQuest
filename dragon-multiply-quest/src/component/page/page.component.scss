@@ -27,3 +27,11 @@
     font-size: 10rem;
   }
 }
+
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}

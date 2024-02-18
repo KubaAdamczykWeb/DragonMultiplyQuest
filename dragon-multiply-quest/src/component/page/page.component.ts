@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReplaysService } from 'src/service/replays/replays.service';
 
 @Component({
   selector: 'dramul-page',
@@ -10,10 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class PageComponent {
   public loading: boolean = true;
+  
+  private _replays = inject(ReplaysService);
+
+  public replay = this._replays.getRandomOperationAsString();  
 
   constructor(){
     setTimeout(()=>{
       this.loading = false;
-    },5*1000)
+    },500)
   }
 }

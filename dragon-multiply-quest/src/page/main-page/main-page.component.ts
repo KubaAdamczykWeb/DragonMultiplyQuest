@@ -10,9 +10,5 @@ import { RouterLink } from '@angular/router';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent {
-
-  public goToDragonQuest():void {
-    console.log('click');
-  }
+export class MainPageComponent { 
 }

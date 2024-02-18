@@ -1,0 +1,13 @@
+:host {
+    width:  100%;
+    display: flex;
+    justify-content: center;
+    gap: 30rem;
+
+    .button {
+        height: 20rem;
+        width: 40rem;
+        text-align: center;
+        line-height: 20rem;
+    }
+} 

@@ -1,0 +1,27 @@
+<div [class]="'map'">
+    <div [class]="'map__row map__row--1'">        
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:1}"/>
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:10}"/>
+    </div>
+    <div [class]="'map__row map__row--2'">
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:2}"/>
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:9}"/>
+    </div>
+    <div [class]="'map__row map__row--3'">
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:3}"/>
+        <ng-container [ngTemplateOutlet]="mapButton" />
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:8}"/>
+    </div>
+    <div [class]="'map__row map__row--2'">
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:4}"/>
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:7}"/>
+    </div>
+    <div [class]="'map__row map__row--1'">
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:5}"/>
+        <ng-container [ngTemplateOutlet]="mapButton" [ngTemplateOutletContext]="{number:6}"/>
+    </div>
+</div>
+
+<ng-template #mapButton let-number="number">
+    <button [class]="'map__button'" (click)="chooseNumber(number)">{{number ?? 'All'}}</button>
+</ng-template>
