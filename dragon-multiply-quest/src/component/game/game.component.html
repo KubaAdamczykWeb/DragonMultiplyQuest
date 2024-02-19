@@ -1,20 +1,28 @@
 <div [class]="'game'">
-  <div *ngIf="!isStarted; else gameRunning"
-        [ngClass]="{'game__task-section': true}">
+  <div *ngIf="state === GameState.Begining; else gameRunning"
+        [ngClass]="{'game__task': true}">
     <button [class]="'pley-button'"
             (click)="pley()">
       Play
     </button>
   </div>
   <ng-template #gameRunning>
-    <div #gameRunning>
-      3 x 3 =
+    <div #gameRunning
+        [ngClass]="{'game__task': true}">
+      <div
+        [ngClass]="{'task__task': true}">
+        {{deck[taskIndex].x + ' ' + deck[taskIndex].type + ' ' + deck[taskIndex].y + ' ='}}
+      </div>
+      <div
+        [ngClass]="{'task__result': true}">
+        {{result}}
+      </div>
     </div>
   </ng-template>
   <div [class]="'game__keyboard'">
     <button *ngFor="let item of buttons; idx: index"
             [class]="'key'"
-            (click)="buttonClick(item)">
+            (click)="buttonClick(item.toString())">
               {{item}}
     </button>
   </div>

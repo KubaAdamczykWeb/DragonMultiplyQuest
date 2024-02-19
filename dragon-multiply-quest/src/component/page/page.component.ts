@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReplaysService } from 'src/service/replays/replays.service';
+import { ReplaysService } from 'src/service/deck/replays.service';
 
 @Component({
   selector: 'dramul-page',
@@ -14,7 +14,7 @@ export class PageComponent {
   
   private _replays = inject(ReplaysService);
 
-  public replay = this._replays.getRandomOperationAsString();  
+  public replay = this._replays.getRandomTaskAsString();  
 
   constructor(){
     setTimeout(()=>{
