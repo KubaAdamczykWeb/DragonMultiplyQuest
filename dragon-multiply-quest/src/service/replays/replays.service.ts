@@ -26,6 +26,6 @@ export class ReplaysService {
 
   public getRandomOperationAsString():string {
     const operation = this.replays[Math.floor(Math.random() * this.replays.length)];
-    return `${operation.x} ${operation.type} ${operation.y} = ${operation.result}`;
+    return `${operation.x} ${operation.type} ${operation.y} = ${operation.result}`
   }
 }

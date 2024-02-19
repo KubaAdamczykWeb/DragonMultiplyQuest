@@ -23,5 +23,6 @@
 </div>
 
 <ng-template #mapButton let-number="number">
-    <button [class]="'map__button'" (click)="chooseNumber(number)">{{number ?? 'All'}}</button>
+    <!-- <button [class]="'map__button'" (click)="chooseNumber(number)">{{number ?? 'All'}}</button> -->
+    <button [class]="'map__button'" routerLink="/quest-game">{{number ?? 'All'}}</button>
 </ng-template>

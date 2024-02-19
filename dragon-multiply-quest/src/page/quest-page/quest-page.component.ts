@@ -6,11 +6,11 @@ import { MapComponent } from 'src/component/map/map.component';
 import { BackButtonsComponent } from 'src/component/back-buttons/back-buttons.component';
 
 @Component({
-  selector: 'dramul-dragons-quest-page',
+  selector: 'dramul-quest-page',
   standalone: true,
   imports: [CommonModule, RouterLink, PageComponent, MapComponent, BackButtonsComponent],
-  templateUrl: './dragons-quest-page.component.html',
-  styleUrls: ['./dragons-quest-page.component.scss']
+  templateUrl: './quest-page.component.html',
+  styleUrls: ['./quest-page.component.scss']
 })
-export class DragonsQuestPageComponent { 
+export class QuestPageComponent { 
 }

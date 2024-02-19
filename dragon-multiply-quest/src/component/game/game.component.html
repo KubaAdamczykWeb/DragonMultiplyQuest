@@ -1,0 +1,10 @@
+
+<div [class]="'numbers__row'">
+    @for(_ of [].constructor(10); track _; let row = $index;){
+        <div [class]="'numbers__row'">
+            @for(_ of [].constructor(10); track _; let cell = $index;){
+                <button >{{(row === 0 ? '' : row.toString()) + cell}}</button>
+            }
+        </div>
+    }
+</div>
