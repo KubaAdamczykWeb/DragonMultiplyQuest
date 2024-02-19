@@ -1,0 +1,17 @@
+.game {
+
+  &__keyboard {
+    width: 90rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem
+
+  }
+}
+
+.key {
+  flex-basis: 25rem;
+  height: 25rem;
+  line-height: 25rem;
+}

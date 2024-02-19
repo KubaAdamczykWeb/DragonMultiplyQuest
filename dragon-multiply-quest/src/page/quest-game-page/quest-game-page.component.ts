@@ -8,7 +8,7 @@ import { PageComponent } from 'src/component/page/page.component';
   standalone: true,
   imports: [PageComponent, GameComponent, BackButtonsComponent],
   templateUrl: './quest-game-page.component.html',
-  styleUrl: './quest-game-page.component.scss'
+  styleUrls: ['./quest-game-page.component.scss']
 })
 export class QuestGamePageComponent {
 

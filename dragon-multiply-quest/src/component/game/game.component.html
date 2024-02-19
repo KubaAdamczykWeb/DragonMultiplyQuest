@@ -1,10 +1,21 @@
-
-<div [class]="'numbers__row'">
-    @for(_ of [].constructor(10); track _; let row = $index;){
-        <div [class]="'numbers__row'">
-            @for(_ of [].constructor(10); track _; let cell = $index;){
-                <button >{{(row === 0 ? '' : row.toString()) + cell}}</button>
-            }
-        </div>
-    }
+<div [class]="'game'">
+  <div *ngIf="!isStarted; else gameRunning"
+        [ngClass]="{'game__task-section': true}">
+    <button [class]="'pley-button'"
+            (click)="pley()">
+      Play
+    </button>
+  </div>
+  <ng-template #gameRunning>
+    <div #gameRunning>
+      3 x 3 =
+    </div>
+  </ng-template>
+  <div [class]="'game__keyboard'">
+    <button *ngFor="let item of buttons; idx: index"
+            [class]="'key'"
+            (click)="buttonClick(item)">
+              {{item}}
+    </button>
+  </div>
 </div>

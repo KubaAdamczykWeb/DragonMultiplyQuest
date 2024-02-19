@@ -7,7 +7,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './back-buttons.component.html',
-  styleUrl: './back-buttons.component.scss'
+  styleUrls: ['./back-buttons.component.scss']
 })
 export class BackButtonsComponent {
   @Input() showBackButton: boolean = false;
