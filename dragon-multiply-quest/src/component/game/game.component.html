@@ -1,8 +1,9 @@
 <div [class]="'game'">
+
   <div *ngIf="state === GameState.Begining; else gameRunning"
         [ngClass]="{'game__task': true}">
-    <button [class]="'pley-button'"
-            (click)="pley()">
+    <button [class]="'task__button'"
+            (click)="startGame()">
       Play
     </button>
   </div>
@@ -13,17 +14,23 @@
         [ngClass]="{'task__task': true}">
         {{deck[taskIndex].x + ' ' + deck[taskIndex].type + ' ' + deck[taskIndex].y + ' ='}}
       </div>
-      <div
-        [ngClass]="{'task__result': true}">
-        {{result}}
+      <div [ngClass]="{'task__result': true,
+                      'task__result--error': state === GameState.Error,
+                      'task__result--success': state === GameState.Success}">
+        {{userResult}}
       </div>
     </div>
   </ng-template>
+
   <div [class]="'game__keyboard'">
     <button *ngFor="let item of buttons; idx: index"
             [class]="'key'"
-            (click)="buttonClick(item.toString())">
+            (click)="keyNumber(item)">
               {{item}}
+    </button>
+    <button [class]="'key'"
+            (click)="keyRemove()">
+            {{'<'}}
     </button>
   </div>
 </div>

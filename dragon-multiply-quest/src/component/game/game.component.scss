@@ -1,4 +1,13 @@
 .game {
+  
+
+  &__task {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90rem;
+    height: 40rem;  
+  }
 
   &__keyboard {
     width: 90rem;
@@ -7,6 +16,22 @@
     justify-content: center;
     gap: 5rem
 
+  }
+}
+
+.task {
+  &__button {
+    height: 25rem;
+    width: 50rem;
+  }
+
+  &__result {
+    &--error {
+      color: var(--red);
+    }
+    &--success {
+      color: var(--green)
+    }
   }
 }
 
