@@ -1,12 +1,15 @@
-.game {
-  
+.game-container{
+  display: flex;
+  justify-content: space-between;
+}
 
+.game {
   &__task {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 90rem;
-    height: 40rem;  
+    height: 40rem;
   }
 
   &__keyboard {
@@ -16,6 +19,20 @@
     justify-content: center;
     gap: 5rem
 
+  }
+}
+
+.game-result {
+  width: 70rem;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__points {
+    font-weight: 700;
   }
 }
 

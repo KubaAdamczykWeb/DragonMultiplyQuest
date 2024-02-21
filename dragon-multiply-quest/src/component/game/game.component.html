@@ -1,36 +1,48 @@
-<div [class]="'game'">
-
-  <div *ngIf="state === GameState.Begining; else gameRunning"
-        [ngClass]="{'game__task': true}">
-    <button [class]="'task__button'"
-            (click)="startGame()">
-      Play
-    </button>
-  </div>
-  <ng-template #gameRunning>
-    <div #gameRunning
-        [ngClass]="{'game__task': true}">
-      <div
-        [ngClass]="{'task__task': true}">
-        {{deck[taskIndex].x + ' ' + deck[taskIndex].type + ' ' + deck[taskIndex].y + ' ='}}
-      </div>
-      <div [ngClass]="{'task__result': true,
-                      'task__result--error': state === GameState.Error,
-                      'task__result--success': state === GameState.Success}">
-        {{userResult}}
-      </div>
+<div [class]="'game-container'">
+  <div [class]="'game'">
+    <div *ngIf="state === GameState.Begining; else gameRunning"
+          [ngClass]="{'game__task': true}">
+      <button [class]="'task__button'"
+              (click)="startGame()">
+        Play
+      </button>
     </div>
-  </ng-template>
+    <ng-template #gameRunning>
+      <div #gameRunning
+          [ngClass]="{'game__task': true}">
+        <div
+          [ngClass]="{'task__task': true}">
+          {{deck[taskIndex].x + ' ' + deck[taskIndex].type + ' ' + deck[taskIndex].y + ' ='}}
+        </div>
+        <div [ngClass]="{'task__result': true,
+                        'task__result--error': state === GameState.Error,
+                        'task__result--success': state === GameState.Success}">
+          {{userResult}}
+        </div>
+      </div>
+    </ng-template>
 
-  <div [class]="'game__keyboard'">
-    <button *ngFor="let item of buttons"
-            [class]="'key'"
-            (click)="keyNumber(item)">
-              {{item}}
-    </button>
-    <button [class]="'key'"
-            (click)="keyRemove()">
-            {{'<'}}
-    </button>
+    <div [class]="'game__keyboard'">
+      <button *ngFor="let item of buttons"
+              [class]="'key'"
+              (click)="keyNumber(item)">
+                {{item}}
+      </button>
+      <button [class]="'key'"
+              (click)="keyRemove()">
+              {{'<'}}
+      </button>
+    </div>
+  </div>
+  <div [class]="'game-result'">
+    <div [class]="'game-result__item'"
+          *ngFor="let item of gameResultTable">
+      <span [class]="'game-result__task'">
+        {{item.task}}
+      </span>
+      <span [class]="'game-result__points'">
+        {{item.points}}
+      </span>
+    </div>
   </div>
 </div>
