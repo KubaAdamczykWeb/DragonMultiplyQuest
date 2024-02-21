@@ -23,7 +23,7 @@
   </ng-template>
 
   <div [class]="'game__keyboard'">
-    <button *ngFor="let item of buttons; idx: index"
+    <button *ngFor="let item of buttons"
             [class]="'key'"
             (click)="keyNumber(item)">
               {{item}}
